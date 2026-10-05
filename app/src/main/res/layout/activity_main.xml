@@ -6,33 +6,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:orentation="vertical">
+    android:orientation="vertical"
+    android:padding="1dp"
+    android:background="@color/black">
+
+
+    <!-- profile -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Profile"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:padding="16dp" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/header"
-        android:padding="10dp"
-        android:background="@color/black"
+        android:orientation="vertical"
         android:gravity="center"
-        >
-
-
-        <Button
-            android:layout_width="46dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
-            android:id="@+id/btnBack"
-            android:text="<"
-            android:textColor="@color/white"/>
+        android:padding="20dp"
+        android:background="#6C55E8">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:text="Profile"
-            android:textColor="@color/cardview_light_background" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sarah Johnson"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System Administrator"
+            android:textColor="#DDDDDD"
+            android:textSize="14sp" />
 
     </LinearLayout>
+
+</LinearLayout>
