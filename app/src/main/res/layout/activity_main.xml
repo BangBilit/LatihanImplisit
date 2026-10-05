@@ -200,6 +200,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:id="@+id/LayoutRole"
             android:padding="12dp"
             android:layout_marginTop="5dp"
             android:background="#3a3a34"
