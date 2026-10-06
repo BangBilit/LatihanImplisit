@@ -4,7 +4,9 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -40,10 +42,22 @@ class MainActivity : AppCompatActivity() {
             startActivity(_phoneIntent)
         }
 
-        _layoutRole.setOnClickListener {
-            val _roleIntent = Intent(this, MainActivity2::class.java)
-            startActivityForResult(_roleIntent, 100)
+        val _txtRole = findViewById<TextView>(R.id.txtRole)
+        val _roleLauncher = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+
+            if (result.resultCode == RESULT_OK) {
+
+                val _selectedRole = result.data?.getStringExtra("ROLE")
+
+                _txtRole.text = _selectedRole
+            }
         }
 
+        _layoutRole.setOnClickListener {
+            val _roleIntent = Intent(this, MainActivity2::class.java)
+            _roleLauncher.launch(_roleIntent)
+        }
     }
 }
