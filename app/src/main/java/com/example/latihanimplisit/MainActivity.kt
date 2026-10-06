@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val _layoutEmail = findViewById<LinearLayout>(R.id.layoutEmail)
+        val _layoutPhone = findViewById<LinearLayout>(R.id.layoutPhone)
 
         _layoutEmail.setOnClickListener {
             val _emailIntent = Intent(
@@ -29,5 +30,14 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(_emailIntent)
         }
+
+        _layoutPhone.setOnClickListener {
+            val _phoneIntent = Intent(
+                Intent.ACTION_DIAL,
+                Uri.parse("tel:+15559876547"))
+
+            startActivity(_phoneIntent)
+        }
+
     }
 }
